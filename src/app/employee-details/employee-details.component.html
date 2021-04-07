@@ -1,0 +1,31 @@
+
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-header style="justify-content: center;">
+            <mat-card-title>{{ employeeDetails.employeeName }}</mat-card-title>
+            <mat-card-subtitle>
+                <h6> <span [ngClass]="{'badge':true,
+                                        'badge-pill':true,
+                                        'badge-success':employeeDetails.status.toLowerCase()=='active',
+                                        'badge-warning':employeeDetails.status.toLowerCase()=='inactive',
+                                        'badge-danger':employeeDetails.status.toLowerCase()=='suspend' }" style="padding: 10px;">
+                        {{ employeeDetails.status }} </span></h6>
+            </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p style="text-align: center;">
+                Employee ID # : {{employeeDetails.employeeId}} <br>
+                Mobile no. : {{employeeDetails.phoneno}} <br>
+                Department : {{employeeDetails.department}} <br>
+                Designation : {{employeeDetails.employeeDesignation}} <br>
+                Country : {{employeeDetails.country.countryName}}
+
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Update</button>
+            <button mat-raised-button color="grey">Home</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
